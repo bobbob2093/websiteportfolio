@@ -43,6 +43,11 @@ def sebastian():
     tasks = Task.query.all()
     return render_template('sebastian.html', tasks=tasks)
 
+@app.route('/Nicholas')
+def nicholas():
+    tasks = Task.query.all()
+    return render_template('Nicholas.html', tasks=tasks)
+
 @app.route('/add', methods=['POST'])
 def add_task():
     description = request.form['task']

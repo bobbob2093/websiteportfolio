@@ -4,6 +4,28 @@ body {
   }
   
   h1 {
-    background-color: #042630;
+    background-color: #4c7273;
     margin-left: 20px;
   }
+
+.nTimeline{
+  list-style-type: none;
+  padding-left: 0;
+  margin:0;
+}
+.nTimeline li{
+  display: inline-block;
+  padding: 20px 20px;
+  margin-right: 5px;
+  background-color: #4c7273;
+  border-radius: 2em;
+  text-align: center;
+  width: 200px;
+}
+/* Media Query for smaller screens */
+@media (max-width: 600px) {
+  .nTimeline li {
+      display: block; /* Stacks the list items vertically */
+      margin-right: 0; /* Removes the right margin */
+  }
+}
