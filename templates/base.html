@@ -1,0 +1,23 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Task Manager{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Navigation bar content here -->
+            <a href="/">Home</a>
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <!-- Footer content here -->
+        <p>© 2024 Task Manager. All rights reserved.</p>
+    </footer>
+</body>
+</html>
