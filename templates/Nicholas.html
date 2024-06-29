@@ -1,0 +1,24 @@
+<!-- templates/Nicholas.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Task Manager</h1>
+<form action="/add" method="post">
+    Task: <input type="text" name="task" />
+    Due Date (YYYY-MM-DD): <input type="date" name="due_date" />
+    <input type="submit" value="Add Task" />
+</form>
+<ul>
+    {% for task in tasks %}
+    <li>
+        {% if task.completed %}
+        <input type="checkbox" checked onclick="window.location.href='/toggle/{{ task.id }}';" />
+        {% else %}
+        <input type="checkbox" onclick="window.location.href='/toggle/{{ task.id }}';" />
+        {% endif %}
+        {{ task.description }} - Due: {{ task.due_date.strftime('%Y-%m-%d') }}
+        <a href="/delete/{{ task.id }}">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
