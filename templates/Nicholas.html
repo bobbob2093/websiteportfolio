@@ -2,23 +2,36 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Task Manager</h1>
-<form action="/add" method="post">
-    Task: <input type="text" name="task" />
-    Due Date (YYYY-MM-DD): <input type="date" name="due_date" />
-    <input type="submit" value="Add Task" />
-</form>
-<ul>
-    {% for task in tasks %}
+<h1>Nicholas Choo</h1>
+<h2>Hello, I am an aspiring software devoloper with a great passion for learning and teaching</h2>
+<ul class="nTimeline">
     <li>
-        {% if task.completed %}
-        <input type="checkbox" checked onclick="window.location.href='/toggle/{{ task.id }}';" />
-        {% else %}
-        <input type="checkbox" onclick="window.location.href='/toggle/{{ task.id }}';" />
-        {% endif %}
-        {{ task.description }} - Due: {{ task.due_date.strftime('%Y-%m-%d') }}
-        <a href="/delete/{{ task.id }}">Delete</a>
+        <h3>January 2018</h3>
+        <h4>Diploma from Associated Board of the Royal Schools of Music</h4>
+        <h5>Piano Performance</h5>
     </li>
-    {% endfor %}
+    <li>
+        <h3>May 2018</h3>
+        <h4>Dulles High School Math and Science Academy</h4>
+        <h5>GPA:3.9</h5>
+        <h5>Rank:11/625</h5>
+        <h5>SAT Score:1550</h5>
+    </li>
+    <li>
+        <h3>May 2022</h3>
+        <h4>UT Austin</h4>
+        <h5>BS Physics</h5>
+        <h5>BS Astronomy</h5>
+        <h5>Minor in Business</h5>
+        <h5>GPA:3.2</h5>
+    </li>
+    <li>
+        <h3>Dec 2022-Jun 2024</h3>
+        <h4>GOWell International</h4>
+        <h5>Test Engineer</h5>
+        <h5>Embedded Systems Engineer</h5>
+        <h5>Production Engineer</h5>
+    </li>
 </ul>
+<h2>Take a look at my portfolio below!</h2>
 {% endblock %}
