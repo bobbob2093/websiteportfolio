@@ -38,6 +38,11 @@ def home():
     tasks = Task.query.all()
     return render_template('home.html', tasks=tasks)
 
+@app.route('/sebastian')
+def sebastian():
+    tasks = Task.query.all()
+    return render_template('sebastian.html', tasks=tasks)
+
 @app.route('/add', methods=['POST'])
 def add_task():
     description = request.form['task']
